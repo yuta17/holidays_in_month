@@ -3,8 +3,8 @@ require 'active_support'
 require 'active_support/time'
 require 'time'
 require 'yaml'
-# require 'holidays_in_month/holiday.rb'
-# require 'holidays_in_month/holidays.rb'
+require 'holidays_in_month/holiday.rb'
+require 'holidays_in_month/holidays.rb'
 
 module HolidaysInMonth
   def self.holidays_in_month(month, year)
