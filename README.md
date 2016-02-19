@@ -1,9 +1,9 @@
-# Holidays of Month
+# Holidays in Month
 
 This gem is return holidays in month.
 
 ```ruby
-HolidaysInMonth.holidays_of_month(2,2016)
+HolidaysInMonth.holidays_in_month(2,2016)
 => ["2016-2-7", "2016-2-14", "2016-2-21", "2016-2-28"]
 ```
 
