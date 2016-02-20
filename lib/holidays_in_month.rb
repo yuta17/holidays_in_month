@@ -8,7 +8,7 @@ require 'holidays_in_month/holidays.rb'
 
 module Holidays
   def self.in_month(month, year)
-    #    @holidays ||= Holidays.new
+    #@holidays ||= Holidays.new
     @holidays = []
     d = 0
     Time.days_in_month(month, year).times do
