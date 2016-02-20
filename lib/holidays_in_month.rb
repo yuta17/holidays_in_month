@@ -13,7 +13,7 @@ module HolidaysInMonth
     Time.days_in_month(month, year).times do
       d += 1
       wday = Date.new(year, month, d).wday
-      holidays.push("#{year}-#{month}-#{d}") if wday == 0
+      holidays << "#{year}-#{month}-#{d}" if wday == 0
     end
     @holidays = holidays
   end
