@@ -3,7 +3,7 @@
 This gem is return holidays in month.
 
 ```ruby
-HolidaysInMonth.holidays_in_month(2,2016)
+Holidays.in_month(2,2016)
 => ["2016-2-7", "2016-2-14", "2016-2-21", "2016-2-28"]
 ```
 
@@ -26,7 +26,7 @@ Or install it yourself as:
 ## Usage
 
 ```ruby
-HolidaysInMonth.holidays_in_month(month, year)
+Holidays.in_month(month, year)
 => ["2016-2-7", "2016-2-14", "2016-2-21", "2016-2-28"]
 ```
 
