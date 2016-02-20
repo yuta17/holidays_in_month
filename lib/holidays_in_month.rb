@@ -6,15 +6,16 @@ require 'yaml'
 require 'holidays_in_month/holiday.rb'
 require 'holidays_in_month/holidays.rb'
 
-module HolidaysInMonth
-  def self.holidays_in_month(month, year)
-    holidays = []
+module Holidays
+  def self.in_month(month, year)
+    #    @holidays ||= Holidays.new
+    @holidays = []
     d = 0
     Time.days_in_month(month, year).times do
       d += 1
       wday = Date.new(year, month, d).wday
-      holidays << "#{year}-#{month}-#{d}" if wday == 0
+      @holidays << "#{year}-#{month}-#{d}" if wday == 0
     end
-    @holidays = holidays
+    @holidays
   end
 end
