@@ -6,8 +6,8 @@ require 'yaml'
 require 'holidays_in_month/holiday.rb'
 require 'holidays_in_month/holidays.rb'
 
-module Holidays
-  def self.in_month(month, year)
+module HolidaysInMonth
+  def self.holidays_in_month(month, year)
     #@holidays ||= Holidays.new
     @holidays = []
     d = 0
