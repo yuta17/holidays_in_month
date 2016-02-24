@@ -18,7 +18,7 @@ gem 'holidays_in_month'
 
 And then execute:
 
-    $ bundle
+    $ bundle install
 
 Or install it yourself as:
 
@@ -26,12 +26,15 @@ Or install it yourself as:
 
 ## Usage
 
+Add this line to your application's Model or Controller:
+
 ```ruby
 Holidays.holidays_in_month(month,year)
 
 example:
-Holidays.holidays_in_month(12,2016)
-=> ["2016-12-3", "2016-12-4", "2016-12-10", "2016-12-11", "2016-12-17", "2016-12-18",
+
+@holidays = Holidays.holidays_in_month(12,2016)
+@holidays => ["2016-12-3", "2016-12-4", "2016-12-10", "2016-12-11", "2016-12-17", "2016-12-18",
   "2016-12-24", "2016-12-25", "2016-12-31", {"2016-12-23"=>"天皇誕生日"}]
 ```
 
