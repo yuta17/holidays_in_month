@@ -30,12 +30,14 @@ Add this line to your application's Model or Controller:
 
 ```ruby
 Holidays.holidays_in_month(month,year)
+```
 
 example:
 
-@holidays = Holidays.holidays_in_month(12,2016)
-@holidays => ["2016-12-3", "2016-12-4", "2016-12-10", "2016-12-11", "2016-12-17", "2016-12-18",
-  "2016-12-24", "2016-12-25", "2016-12-31", {"2016-12-23"=>"天皇誕生日"}]
+```ruby
+@holidays = Holidays.holidays_in_month(1,2016)
+@holidays => ["2016-1-2", "2016-1-3", "2016-1-9", "2016-1-10", "2016-1-16", "2016-1-17",
+  "2016-1-23", "2016-1-24", "2016-1-30", "2016-1-31", {"2016-01-01"=>"元日", "2016-01-11"=>"成人の日"}]
 ```
 
 ## License
