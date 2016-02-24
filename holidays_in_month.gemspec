@@ -5,7 +5,7 @@ require 'holidays_in_month/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "holidays_in_month"
-  spec.version       = HolidaysInMonth::VERSION
+  spec.version       = Holidays::VERSION
   spec.authors       = ["Yuta Hasada"]
   spec.email         = ["usgitan@gmail.com"]
 
