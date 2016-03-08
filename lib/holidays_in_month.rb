@@ -5,14 +5,14 @@ require 'time'
 require 'yaml'
 
 module Holidays
-  def self.holidays_in_month(month, year)
-    @national_holidays = {}
+  def self.get_in_month(month, year)
+    @national = {}
     @holidays = []
     d = 0
 
     yaml = YAML.load_file(File.expand_path('./../../holidays.yml', __FILE__))
     yaml.each do |date, name|
-      @national_holidays.store(date.strftime("%Y-%m-%d"), name)
+      @national.store(date.strftime("%Y-%m-%d"), name)
     end
 
     Time.days_in_month(month, year).times do
@@ -24,12 +24,12 @@ module Holidays
 
     case month
     when 1
-      @national_holidays = @national_holidays.select { |k| k.match(/#{year}-0#{month}-*/) }
+      @national = @national.select { |k| k.match(/#{year}-0#{month}-*/) }
     when 2
-      @national_holidays = @national_holidays.select { |k| k.match(/#{year}-0#{month}-*/) }
+      @national = @national.select { |k| k.match(/#{year}-0#{month}-*/) }
     else
-      @national_holidays = @national_holidays.select { |k| k.match(/#{year}-#{month}-*/) }
+      @national = @national.select { |k| k.match(/#{year}-#{month}-*/) }
     end
-    @holidays << @national_holidays
+    @holidays << @national
   end
 end

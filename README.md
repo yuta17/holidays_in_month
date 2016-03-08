@@ -3,7 +3,7 @@
 This gem is return holidays(Saturday, Sunday, National) in month in Japan.
 
 ```ruby
-Holidays.holidays_in_month(1,2016)
+Holidays.get_in_month(1,2016)
 => ["2016-1-2", "2016-1-3", "2016-1-9", "2016-1-10", "2016-1-16", "2016-1-17",
   "2016-1-23", "2016-1-24", "2016-1-30", "2016-1-31", {"2016-01-01"=>"元日", "2016-01-11"=>"成人の日"}]
 ```
@@ -29,13 +29,13 @@ Or install it yourself as:
 Add this line to your application's Model or Controller:
 
 ```ruby
-Holidays.holidays_in_month(month,year)
+Holidays.get_in_month(month,year)
 ```
 
 example:
 
 ```ruby
-@holidays = Holidays.holidays_in_month(1,2016)
+@holidays = Holidays.get_in_month(1,2016)
 @holidays => ["2016-1-2", "2016-1-3", "2016-1-9", "2016-1-10", "2016-1-16", "2016-1-17",
   "2016-1-23", "2016-1-24", "2016-1-30", "2016-1-31", {"2016-01-01"=>"元日", "2016-01-11"=>"成人の日"}]
 ```
