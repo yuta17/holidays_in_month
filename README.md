@@ -1,6 +1,6 @@
 # Holidays in Month
 
-This gem is return holidays(Saturday, Sunday, National) in month in Japan.
+This gem is return holidays(Saturday, Sunday, National) of month in Japan.
 
 ```ruby
 Holidays.get_in_month(1,2016)
