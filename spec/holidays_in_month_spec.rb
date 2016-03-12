@@ -7,7 +7,7 @@ describe Holidays do
       let(:month) { 2 }
       let(:year) { 2016 }
       let(:result) { ["2016-2-6", "2016-2-7", "2016-2-13", "2016-2-14", "2016-2-20", "2016-2-21", "2016-2-27", "2016-2-28", {"2016-02-11"=>"建国記念の日"}] }
-      it { is_expected.to eq result }
+      it { is_expected.to match_array(result) }
     end
   end
 end
