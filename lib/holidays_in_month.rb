@@ -6,17 +6,18 @@ require 'yaml'
 
 module JP
   class Holiday
-    def init
-      @nationals = {}
-      @holidays = []
-    end
-
     def get_in_month(year, month)
       init
+      #休日に祝日を追加
       holidays(year, month) << nationaldays.select { |n| n.match(/#{year}-#{"%02d" % month}-*/) }
     end
 
     private
+
+    def init
+      @nationals = {}
+      @holidays = []
+    end
 
     def nationaldays
       yaml = YAML.load_file(File.expand_path('./../../holidays.yml', __FILE__))
