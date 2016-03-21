@@ -15,16 +15,16 @@ module JP
     private
 
     def init
-      @nationals = {}
+      @nationaldays = {}
       @holidays = []
     end
 
     def nationaldays
       yaml = YAML.load_file(File.expand_path('./../../holidays.yml', __FILE__))
       yaml.each do |date, name|
-        @nationals.store(date.strftime("%Y-%m-%d"), name)
+        @nationaldays.store(date.strftime("%Y-%m-%d"), name)
       end
-      @nationals
+      @nationaldays
     end
 
     def holidays(year, month)
