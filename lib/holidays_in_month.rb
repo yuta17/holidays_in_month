@@ -6,14 +6,13 @@ require 'yaml'
 
 module JP
   class Holiday
-    def init
+    def initialize
       @nationaldays = {}
       @holidays = []
     end
 
     def get_in_month(year, month)
-      init
-      #休日に祝日を追加
+      #休日に月の祝日を追加
       holidays(year, month) << nationaldays.select { |n| n.match(/#{year}-#{"%02d" % month}-*/) }
     end
 
