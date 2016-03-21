@@ -4,32 +4,36 @@ require 'active_support/time'
 require 'time'
 require 'yaml'
 
-module Holidays
-  def self.get_in_month(month, year)
-    @national = {}
-    @holidays = []
-    d = 0
-
-    yaml = YAML.load_file(File.expand_path('./../../holidays.yml', __FILE__))
-    yaml.each do |date, name|
-      @national.store(date.strftime("%Y-%m-%d"), name)
+module JP
+  class Holiday
+    def init
+      @nationals = {}
+      @holidays = []
     end
 
-    Time.days_in_month(month, year).times do
-      d += 1
-      wday = Date.new(year, month, d).wday
-      #Saturday => wday == 6, Sunday => wday == 0
-      @holidays << "#{year}-#{month}-#{d}" if wday == 6 || wday == 0
+    def get_in_month(year, month)
+      init
+      holidays(year, month) << nationaldays.select { |n| n.match(/#{year}-#{"%02d" % month}-*/) }
     end
 
-    case month
-    when 1
-      @national = @national.select { |k| k.match(/#{year}-0#{month}-*/) }
-    when 2
-      @national = @national.select { |k| k.match(/#{year}-0#{month}-*/) }
-    else
-      @national = @national.select { |k| k.match(/#{year}-#{month}-*/) }
+    private
+
+    def nationaldays
+      yaml = YAML.load_file(File.expand_path('./../../holidays.yml', __FILE__))
+      yaml.each do |date, name|
+        @nationals.store(date.strftime("%Y-%m-%d"), name)
+      end
+      @nationals
     end
-    @holidays << @national
+
+    def holidays(year, month)
+      num_days_of_month = Date.new(year, month).end_of_month.day
+
+      1.upto(num_days_of_month) do |day|
+        wday = Date.new(year, month, day).wday
+        @holidays << "%04d-%02d-%02d" % [year, month, day] if wday == 6 || wday == 0
+      end
+      @holidays
+    end
   end
 end
