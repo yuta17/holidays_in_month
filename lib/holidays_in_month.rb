@@ -1,9 +1,3 @@
-require 'holidays_in_month/version'
-require 'active_support'
-require 'active_support/time'
-require 'time'
-require 'yaml'
-
 class Holiday
   def initialize
     @nationaldays = {}
@@ -11,7 +5,6 @@ class Holiday
   end
 
   def in_month(year, month)
-    #祝日を取得して休日の配列に追加
     holidays(year, month) << nationaldays.select { |n| n.match(/#{year}-#{"%02d" % month}-*/) }
   end
 
@@ -35,3 +28,9 @@ class Holiday
     @holidays
   end
 end
+
+require 'holidays_in_month/version'
+require 'active_support'
+require 'active_support/time'
+require 'time'
+require 'yaml'
