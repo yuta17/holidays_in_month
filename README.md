@@ -5,7 +5,7 @@ This gem is return holidays(Saturday, Sunday, National) of month in Japan.
 ## Usage
 
   ```ruby
-Holiday.new.in_month(2016, 1)
+JP::Holiday.new.in_month(2016, 1)
   => ["2016-1-2", "2016-1-3", "2016-1-9", "2016-1-10", "2016-1-16", "2016-1-17",
   "2016-1-23", "2016-1-24", "2016-1-30", "2016-1-31", {"2016-01-01"=>"元日", "2016-01-11"=>"成人の日"}]
   ```
