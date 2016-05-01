@@ -1,4 +1,4 @@
-class Holiday
+class Holidays
   def initialize
     @nationaldays = {}
     @holidays = []
