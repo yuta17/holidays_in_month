@@ -29,6 +29,7 @@ module JP
       @holidays
     end
   end
+end
 
   require 'holidays_in_month/version'
   require 'active_support'
